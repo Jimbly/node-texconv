@@ -1,0 +1,22 @@
+{
+  "name": "texconv",
+  "version": "1.0.0",
+  "description": "Wrapper around platform-specific texconv binaries for converting images to DXT, DDS, etc",
+  "main": "index.js",
+  "keywords": [
+    "DDS",
+    "DXT1",
+    "DXT5"
+  ],
+  
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "author": "Jimb Esser (https://github.com/Jimbly)",
+  "homepage": "https://github.com/Jimbly/node-texconv#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jimbly/npm-publish.git"
+  },
+  "license": "MIT"
+}

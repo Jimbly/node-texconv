@@ -4,12 +4,13 @@ texconv
 Provides a Node.js API to MS/Intel's `texconv` tool.
 
 Required parameters:
-* `in` source file (path or buffer)
+* `in` source file (path or `Buffer`)
 * `f` output format (e.g. `DXT5`)
 * `ft` output file type (e.g. `DDS`)
 Optional parameters:
 * Any command-line parameters to `texconv` except file folder/wildcard-related ones
 * `verbose` to have texconv output piped to stdout
+* `ext` if source `in` is a `Buffer`, the file type extension to use when passing to `texconv` (default: `png`)
 
 Example usage:
 ```javascript
@@ -17,6 +18,9 @@ const fs = require('fs');
 const texconv = require('texconv');
 texconv({
   in: 'file.png',
+  // or:
+  //   in: fs.readFileSync('file.png'),
+  //   ext: 'png',
   f: 'dds',
 }, function (err, buffer) {
   if (err) {

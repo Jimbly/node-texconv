@@ -21,6 +21,8 @@ function texconv(opts, next) {
   delete opts.in;
   let verbose = Boolean(opts.verbose);
   delete opts.verbose;
+  let input_ext = opts.ext || 'png';
+  delete opts.ext;
 
   fs.mkdtemp(path.join(os.tmpdir(), 'texconv-'), function (err, temp_dir) {
     if (err) {
@@ -32,7 +34,7 @@ function texconv(opts, next) {
         return void next();
       }
       let file_buf = file_in;
-      file_in = path.join(temp_dir, 'input.unknown');
+      file_in = path.join(temp_dir, `input.${input_ext}`);
       fs.writeFile(file_in, file_buf, next);
     }
 

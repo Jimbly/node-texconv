@@ -1,6 +1,6 @@
 {
   "name": "texconv",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Wrapper around platform-specific texconv binaries for converting images to DXT, DDS, etc",
   "main": "index.js",
   "keywords": [
